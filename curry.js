@@ -13,3 +13,4 @@ function sum(a,b){
 }
 let currySum = curry(sum);
 currySum(1)(2); // 3
+currySum(1,2);
