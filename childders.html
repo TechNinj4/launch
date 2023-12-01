@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div>Begin</div>
+  <ul>
+    <li>Information</li>
+  </ul>
+  <div>End</div>
+  <script>
+    // for...of中 childNodes 替换 children 也可以 遍历所有子节点(元素节点、文本节点、注释)
+    for (let elem of document.body.children) {// 遍历元素节点
+      console.log(elem); // DIV, UL, DIV, SCRIPT
+    }
+  </script>
+  ...
+</body>
+</html>

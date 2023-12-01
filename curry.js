@@ -14,3 +14,9 @@ function sum(a,b){
 let currySum = curry(sum);
 currySum(1)(2); // 3
 currySum(1,2); // result:3
+
+// q: what is curry?
+// a: curry is a function that takes a function and returns a function that takes one argument
+// q: currying usage
+// a: currying is a function that takes a function and returns a function that takes one argument
+
