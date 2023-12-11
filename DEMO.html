@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 函数声明
+        function Hello() {
+            // 原始函数
+            alert("Hello World");
+            return "Hay? done";
+        }
+        // q:函数声明是否可以函数重复定义，会覆盖之前的函数引用吗？
+        // 覆盖了Hello这个变量的引用,但没有修改函数体本身
+        // 赋值之前,Hello 是函数声明定义的函数
+        // 赋值语句之后,Hello变成了一个变量,存储了Again(Hello)的返回值
+        function Again(func) {
+            // 函数重复定义,Hello函数体仍然存在，并没有改变
+            // 引用Hello原始函数
+            let result = func();
+            alert(result);
+            //func();
+            alert("Hello Again");
+            return result;
+        }
+        Hello = Again(Hello); // var Hello = Again(Hello);
+
+        // result:
+        // 1.Hello World
+        // 2.Hay? done
+        // 3.Hello Again
+        // Hello->"Hay? done"
+        console.log(Hello);
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p {
+        color: green;
+        text-align: center;
+        font-size: large;
+      }
+    </style>
+  </head>
+  <body>
+    <div>Hello</div>
+    hello
+    <!-- <p>A paragraph</p>
+    <div>A div</div>
+    <table>
+        <th>1</th>
+        <td>2</td>
+    </table>
+    <script>
+     // alert( document.body.innerHTML ); // 读取当前内容
+       let elem = document.getElementsByTagName("table")[0];
+       elem.innerHTML += "<table><th>1</th><td>4</td></table>"; // 替换它
+    </script> -->
+    <!-- 
+    <div id="elem">Hello <b>World</b></div>
+
+    <script>
+      alert(elem.innerHTML); // Hello <b>World</b>
+      alert(elem.outerHTML); // <div id="elem">Hello <b>World</b></div>
+    </script> -->
+    <div>Hello, world!</div>
+
+    <script>
+      //  let div = document.querySelector("div");
+
+      // 使用 <p>...</p> 替换 div.outerHTML
+      // div.outerHTML = "<p>A new element</p>"; // (*)
+      // div.innerHTML = "<p>A new element</p>"; //  <div><p>A new element</p></div>
+      // 蛤！'div' 还是原来那样！
+      //  alert(div.outerHTML); // <div>Hello, world!</div> (**)
+      //alert(div.outerHTML);
+
+      let txt = document.body.firstChild;
+      alert(txt.data); //hello
+      alert(txt.nextSibling.data); // commet
+    </script>
+  </body>
+</html>

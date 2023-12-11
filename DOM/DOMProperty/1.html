@@ -1,0 +1,19 @@
+<body>
+    <div id="elem" about="Elephant"></div>
+  
+    <script>
+  
+      alert( elem.getAttribute('About') ); // (1) 'Elephant'，读取
+  
+      elem.setAttribute('Test', 123); // (2) 写入
+  
+      alert( elem.outerHTML ); // (3) 查看特性是否在 HTML 中（在）
+  
+      for (let attr of elem.attributes) { // (4) 列出所有
+        console.log( `${attr.name} = ${attr.value}` );
+      }
+      elem.removeAttribute('Test'); // (5) 移除
+      // 'Test' -> null
+      alert( elem.getAttribute('Test') );
+    </script>
+  </body>

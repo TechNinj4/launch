@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<body>
+  <style>
+    .order[data-order-state="new"] {
+      color: green;
+    }
+
+    .order[data-order-state="pending"] {
+      color: blue;
+    }
+
+    .order[data-order-state="canceled"] {
+      color: red;
+    }
+  </style>
+
+  <div class="order" data-order-id="1" data-order-state="new">A new order.</div>
+
+  <div class="order" data-order-id="2" data-order-state="pending">
+    A pending order.
+  </div>
+
+  <div class="order" data-order-id="3" data-order-state="canceled">
+    A canceled order.
+  </div>
+
+  <script>
+    let order = document.querySelector('.order[data-order-id="3"]');
+
+    // 读取
+    alert(order.dataset.orderState);
+
+    // 修改
+    order.dataset.orderState = "new";
+  </script>
+</body>

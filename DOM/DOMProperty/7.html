@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a name="list">the list</a>
+    <ul>
+      <li><a href="http://google.com">http://google.com</a></li>
+      <li><a href="/tutorial">/tutorial.html</a></li>
+      <li><a href="local/path">local/path</a></li>
+      <li><a href="ftp://ftp.com/my.zip">ftp://ftp.com/my.zip</a></li>
+      <li><a href="http://nodejs.org">http://nodejs.org</a></li>
+      <li><a href="http://internal.com/test">http://internal.com/test</a></li>
+    </ul>
+
+    <script>
+      for (let link of document.querySelectorAll("a")) {
+
+        // 1.筛选出href属性为http开头的链接
+        //     if(link.href.startsWith("http")){
+        //     link.style.color = "orange";
+        //   }
+
+        // 2.筛选出href属性不是internal开头的链接
+        // if(!link.href.startsWith("http://internal.com")){
+        // link.style.color = "orange";
+        //}
+
+        // 3.筛选出href属性为http开头的链接 且 href属性不为internal开头的链接
+        // if (link.href.startsWith("http") && !link.href.startsWith("http://internal.com")) {
+        //   link.style.color = "orange";
+        // }
+
+        // 4.筛选出href属性为http或ftp开头的链接 且 href属性不为internal开头的链接
+        if (!link.href.startsWith("http://internal.com") && link.href.startsWith("http") || link.href.startsWith("ftp")) {
+          link.style.color = "orange";
+        }
+      }
+    </script>
+  </body>
+</html>

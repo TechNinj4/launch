@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      /* 样式依赖于自定义特性 "order-state" */
+      .order[data-order-state="new"] {
+        color: green;
+        text-align: center;
+        font-size: larger;
+      }
+
+      .order[data-order-state="pending"] {
+        color: blue;
+        text-align: center;
+        font-size: larger;
+      }
+
+      .order[data-order-state="canceled"] {
+        color: red;
+        text-align: center;
+        font-size: larger;
+      }
+    </style>
+
+    <div class="order" data-order-state="new">A new order.</div>
+
+    <div class="order" data-order-state="pending">A pending order.</div>
+
+    <div class="order" data-order-state="canceled">A canceled order.</div>
+
+    <script>
+        // 遍历：重复一个怎么样操作；
+        for(let order of document.querySelectorAll('.order')){
+            order.setAttribute('data-order-state', 'pending');
+            let count = 0;
+            console.log(order.getAttribute('data-order-state'),count++);
+        }
+    </script>
+  </body>
+</html>
