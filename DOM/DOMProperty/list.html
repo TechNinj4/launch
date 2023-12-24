@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul"></ul>
+    <script>
+        //  let string = prompt("列表项的内容");
+        //  let li = document.createElement("li");
+        //  li.innerHTML = string;
+        //  ul.append(li);
+        // 重复以上步骤，直到用户取消输入（按下 Esc 键，或输入一个空内容）
+         while (true) {
+             string = prompt("列表项的内容");
+             if (!string) break; //检查语法
+             li = document.createElement("li");
+             li.innerHTML = string;
+             ul.append(li);
+         }
+    </script>
+</body>
+</html>

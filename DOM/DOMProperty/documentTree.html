@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+      let data = {
+        Fish: {
+          trout: {},
+          salmon: {},
+        },
+
+        Tree: {
+          Huge: {
+            sequoia: {},
+            oak: {},
+          },
+          Flowering: {
+            "apple tree": {},
+            magnolia: {},
+          },
+        },
+      };
+      // 编写一个函数 createTree，从嵌套对象创建一个嵌套的 ul/li 列表（list）
+      // 1.为树创建 HTML，然后将它们赋值给 container.innerHTML。
+      // 2.创建节点树，并使用 DOM 方法将它们附加（append）上去。
+
+      function createTree(container, obj) {
+        container.innerHTML = createTreeText(obj);
+      }
+
+      function createTreeText(obj) {
+        let li = "";
+        let ul;
+        for (let key in obj) {
+          li += "<li>" + key + createTreeText(obj[key]) + "</li>";
+        }
+        if (li) {
+          ul = "<ul>" + li + "</ul>";
+        }
+        return ul || "";
+      }
+
+      let container = document.getElementById("container");
+      createTree(container, data); // 将树创建在 container 中
+    </script>
+  </body>
+</html>

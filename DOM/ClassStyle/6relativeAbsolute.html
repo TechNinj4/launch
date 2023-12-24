@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .container {
+        position: relative;
+      }
+
+      .topleft {
+        position: absolute;
+        top: 8px;
+        left: 16px;
+        font-size: 18px;
+        color: red;
+      }
+      .topright {
+        position: absolute;
+        top: 8px;
+        right: 16px;
+        font-size: 18px;
+        color: red;
+      }
+      .bottomleft {
+        position: absolute;
+        bottom: 8px;
+        left: 16px;
+        font-size: 18px;
+        color: red;
+      }
+      .bottomright {
+        position: absolute;
+        bottom: 8px;
+        right: 16px;
+        font-size: 18px;
+        color: red;
+      }
+      .center {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+        color: red;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        opacity: 1;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>图像文本</h1>
+
+    <p>在图像左上角添加一些文本：</p>
+
+    <div class="container">
+      <img src="./resource/pexels-2.jpg" alt="W3School" width="800" height="450" />
+      <div class="topleft">Top Left</div>
+      <div class="topright">Top right</div>
+      <div class="bottomleft">Bottom Left</div>
+      <div class="bottomright">Bottom right</div>
+      <div class="center">center</div>
+    </div>
+  </body>
+</html>

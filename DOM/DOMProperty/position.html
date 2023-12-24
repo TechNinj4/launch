@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="box"></div>
+    <script>
+      let box = document.getElementById("box");
+
+      let boxRect = box.getBoundingClientRect();
+
+      console.log(boxRect.top); // 距视窗顶部的坐标
+      console.log(boxRect.left); // 距视窗左侧的坐标
+
+      console.log(boxRect.bottom);
+      console.log(boxRect.right);
+    </script>
+  </body>
+</html>

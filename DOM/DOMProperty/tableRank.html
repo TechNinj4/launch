@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table id="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          //1
+          <td>John</td>
+          <td>Smith</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          //2
+          <td>Pete</td>
+          <td>Brown</td>
+          <td>15</td>
+        </tr>
+        <tr>
+          <td>Ann</td>
+          <td>Lee</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>...</td>
+          <td>...</td>
+          <td>...</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      // 获取 table 元素中的第一个 <tbody> 元素,并返回它包含的所有行(row)的数据。
+      let sortedRows = Array.from(table.tBodies[0].rows).sort((rowA, rowB) =>
+        rowA.cells[0].innerHTML.localeCompare(rowB.cells[0].innerHTML)
+      );
+      // rowA -> tr
+      // 获取rowA的所有data，获取一个rowA.cells[0]
+      // localeCompare比较两行的顺序,“当行”和“下一行”第一个单元格的 innerHTML 值
+      // 如果 rowA.cells[0].innerHTML < rowB.cells[0].innerHTML
+      // 如果返回负数,则 rowA 排在 rowB 前面；（正序）
+      // 如果返回正数,则 rowB 排在 rowA 前面；（倒序）
+      // 如果返回 0,则两个相等；（不变）
+      table.tBodies[0].append(...sortedRows);
+      // 改变了原数组顺序,是因为使用了 ... 展开语法。 
+    </script>
+  </body>
+</html>

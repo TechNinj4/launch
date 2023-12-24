@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table id="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John</td>
+          <td>Smith</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>...</td>
+          <td>...</td>
+          <td>...</td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      // let tbody = document
+      //   .getElementById("table")
+      //   .getElementsByTagName("tbody")[0];
+      let tbody = document.querySelectorAll("tbody")[0];
+      let firstTr = tbody.firstElementChild;
+      tbody.append(firstTr);
+    </script>
+    <hr />
+    <div>
+      <ul>
+        <li>John</li>
+        <li>Smith</li>
+        <li>10</li>
+      </ul>
+      <ul>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+      </ul>
+    </div>
+    <script>
+      ///  let div = document.querySelectorAll("div");
+      // querySelectorAll("div") and querySelecttorAll('div')[0] of difference with to refer syncSet
+      
+      let div = document.querySelectorAll("div")[0];
+      div.append(div.firstElementChild); //本质上“移动插入”
+      // let firstUl = div.firstElementChild;
+      // div.append(firstUl);
+
+
+      // let div = document.querySelectorAll('div');
+      // console.log(div); //NodeList 
+      // let firstUl = div[0].firstElementChild;
+      // console.log(firstUl);
+      // div[0].append(firstUl);
+    </script>
+  </body>
+</html>

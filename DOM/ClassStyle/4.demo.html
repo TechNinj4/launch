@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "elem" >123</div>
+    <script>
+        setTimeout(()=>{
+            elem.innerHTML += "<p>this write</p><span>456</span>"
+        },2000)
+        elem.style.color = 'red';
+        elem.style.fontSize = '20px';
+        elem.style.backgroundColor = "yellow";
+        elem.style.borderLeftWidth = '1px';
+        elem.style.display = "none";
+        setTimeout(() => elem.style.removeProperty('display'), 1000);
+    </script>
+</body>
+</html>

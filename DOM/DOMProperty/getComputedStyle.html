@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        width: 600px;
+        color: red;
+        margin: 5px;
+        padding: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      //   let computedStyle = getComputedStyle(document.body);
+      // 现在我们可以读取它的 margin 和 color 了
+      //   alert(computedStyle.marginTop); // 5px
+      //   alert(computedStyle.color); // rgb(255, 0, 0)
+      alert(getComputedStyle(document.body).width); // 600px
+      alert(getComputedStyle(document.body).color); // rgb(255, 0, 0)
+      alert(getComputedStyle(document.body).marginTop); // 5px
+      alert(getComputedStyle(document.body).padding); // ?
+      alert(document.body.clientWidth); // ?
+    </script>
+  </body>
+</html>
