@@ -1,0 +1,12 @@
+.hello{
+    color: red;
+    font-family: 'MyFont';
+    background: url('./icon.jpg');
+    background-repeat: no-repeat;
+}
+@font-face {
+    font-family: 'MyFont';
+    src: url('./HONORSANSCN-REGULAR.TTF') format('TTF'),
+      url('./HONORSANSCN-LIGHT.TTF') format('TTF');
+    font-weight: 600;
+  }
