@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="button">按钮</button>
+    <script>
+      let button = document.getElementById("button");
+
+      // let obj = {
+      //   handleEvent(event) {
+      //     button.onclick = () => alert(2);
+
+      //     button.addEventListener("click", () => alert("1"));
+
+      //     button.removeEventListener("click", () => alert("1"));
+      //   },
+      // };
+      // button.addEventListener("click", obj);
+
+      /// 方案一
+      // button.addEventListener("click", () => alert("1"));
+      // button.removeEventListener("click", () => alert("1"));
+      // button.onclick = () => alert(2); // end: 1,2 
+      /// 第一个处理程序会触发，因为它没有被 removeEventListener 移除。
+      
+      /// 方案二
+      function handler() {
+        alert(1);
+      }
+      button.addEventListener("click", handler);
+      button.removeEventListener("click", handler);
+      button.onclick = () => alert(2); //2
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" id="hider" value="Type_1: Click to hide" />
+
+    <!--改变了 buttons的hidden属性-->
+    <!-- hidden 属性不会触发文档流的改变 元素仅仅是被隐藏了,对文档流没有影响 -->
+    <input type="button" onclick="this.hidden=true" value="Type_2:Click to hide " />
+    <script>
+      /* your code */
+      // 改变了按钮的CSS样式display属性
+      // display: none 会触发文档流的改变 元素从文档流消失,可能影响周围元素的布局
+      // hidden 属性兼容性略差 在老旧浏览器可能会失效,而display则兼容性更好。
+      hider.onclick = function () {
+        hider.style.display = "none";
+      };
+    </script>
+  </body>
+</html>
