@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./message.css" />
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="pane">
+        <h3>Horse</h3>
+        <p>
+          The horse is one of two extant subspecies of Equus ferus. It is an
+          odd-toed ungulate mammal belonging to the taxonomic family Equidae.
+          The horse has evolved over the past 45 to 55 million years from a
+          small multi-toed creature, Eohippus, into the large, single-toed
+          animal of today.
+        </p>
+        <button class="remove-button">[x]</button>
+      </div>
+      <div class="pane">
+        <h3>Donkey</h3>
+        <p>
+          The donkey or ass (Equus africanus asinus) is a domesticated member of
+          the horse family, Equidae. The wild ancestor of the donkey is the
+          African wild ass, E. africanus. The donkey has been used as a working
+          animal for at least 5000 years.
+        </p>
+        <button class="remove-button">[x]</button>
+      </div>
+      <div class="pane">
+        <h3>Cat</h3>
+        <p>
+          The domestic cat (Latin: Felis catus) is a small, typically furry,
+          carnivorous mammal. They are often called house cats when kept as
+          indoor pets or simply cats when there is no need to distinguish them
+          from other felids and felines. Cats are often valued by humans for
+          companionship and for their ability to hunt vermin.
+        </p>
+        <button class="remove-button">[x]</button>
+      </div>
+    </div>
+
+    <script>
+      /// ### method 1:
+      /// 局限性：局限于直接点击 .pane 区域： 如果在 .pane 区域内的子元素上点击，事件将会冒泡到 .pane
+      // let panes = document.querySelectorAll(".pane");
+      // for (let pane of panes) {
+      //   pane.addEventListener("click", () => pane.remove());
+      // }
+
+      /// ### method 2:
+      let removes = document.querySelectorAll(".remove-button");
+      for (let remove of removes) {
+        //remove.addEventListener("click", () => remove.closest(".pane").remove());
+        remove.addEventListener(
+          "click",
+          () => document.getElementsByClassName("pane")[0].remove() // 集合的第一个元素
+        );
+      }
+
+      /// ### method 3:
+      // let events = function (event) {
+      //   if (event.target.className != "remove-button") return; // 检查语句：非remove-button，返回空；
+
+      //   let pane = event.target.closest(".pane"); // 找到最近的 .pane
+      //   pane.remove(); // 删除 .pane
+      // };
+      // container.onclick = events;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Contents</h1>
+    <div class="contents">
+      <ul class="book">
+        <li class="chapter">Chapter 1</li>
+        <li class="chapter">Chapter 2</li>
+      </ul>
+    </div>
+    <script>
+      /// closest()实质上是向上遍历祖先节点,返回匹配选择器的第一个祖先
+      let chapter = document.querySelectorAll(".chapter")[1]; // LI->2
+      console.log(chapter.closest(".book")); //
+      console.log(chapter.closest(".contents")); //
+      console.log(chapter.closest("h1")); // null（因为 h1 不是祖先）
+
+      if (chapter.matches(".chapter")) {
+        console.log("estity");
+      }
+    </script>
+  </body>
+</html>

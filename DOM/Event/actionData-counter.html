@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+  <style>
+    body {
+      width: 50%;
+    }
+  </style>
+</head>
+<body>
+    
+  Counter: <input type="button" value="1" data-counter /> One more counter:
+  <input type="button" value="2" data-counter />
+
+  <script>
+    let input = document.querySelectorAll("[data-counter]");
+    for (let inputs of input) {
+      inputs.addEventListener("click", function (event) {
+        if (event.target.dataset.counter != undefined) {
+          // 如果这个特性存在...
+          event.target.value++;
+        }
+      })
+    }
+  </script>
+</body>
